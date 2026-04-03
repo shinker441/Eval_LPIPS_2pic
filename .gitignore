@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs / outputs
+*.log
+results/
+*.csv
+
+# Model cache (lpips downloads)
+.lpips/

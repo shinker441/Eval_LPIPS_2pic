@@ -1,0 +1,32 @@
+# LPIPS Evaluation Application Configuration
+
+slm:
+  screen_index: 1          # Display index for SLM (0=primary, 1=secondary, ...)
+  display_mode: fit        # 'fit'=aspect-ratio preserved, 'fill'=stretch, 'native'=1:1 pixels
+  background_color: black  # Background color when image is smaller than screen
+
+camera:
+  device_index: 0          # OpenCV camera device index
+  backend: auto            # 'auto', 'dshow' (Windows DirectShow), 'v4l2' (Linux)
+  width: 1920              # Capture resolution width (0=camera default)
+  height: 1080             # Capture resolution height (0=camera default)
+  exposure: -1             # Exposure value (-1=auto)
+  gain: -1                 # Gain value (-1=auto)
+  warmup_frames: 5         # Frames to discard before capture (camera warmup)
+
+measurement:
+  stabilization_delay_ms: 500   # Wait after displaying CGH before capture (ms)
+  num_captures: 1               # Number of captures to average per CGH
+  capture_interval_ms: 100      # Interval between captures when num_captures > 1
+  pair_mode: sorted             # 'sorted'=pair by sort order, 'name'=pair by filename stem
+
+lpips:
+  network: alex      # 'alex' (faster) or 'vgg' (more accurate)
+  spatial: false     # Spatial LPIPS map (true) or scalar (false)
+  resize_to: 256     # Resize images before LPIPS (0=no resize)
+  normalize: true    # Normalize images to [-1, 1] range
+
+paths:
+  cgh_folder: ""
+  target_folder: ""
+  output_folder: ""
